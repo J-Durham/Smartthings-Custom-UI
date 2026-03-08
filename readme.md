@@ -5,7 +5,7 @@
 ### Cloning the repository
 - Open up a terminal window
 - Run the following command to clone the git repository to your local environment
-- `git clone https://github.com/J-Durham/Smartthings-Custom-UI.git`
+- `git clone git@github.com:J-Durham/Smartthings-Custom-UI.git`
 
 ### Dependency installation
 - Navigate to the directory of the repository
