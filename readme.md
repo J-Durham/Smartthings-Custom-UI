@@ -1,5 +1,9 @@
 # README
 
+## Description
+
+This is going to act as an open source frontend for Samsung SmartThings devices, to be a basic replacement for ActionTiles. Currently, this is in very early testing, but will be updated as more tooling and devlopment occurs.
+
 ## Setup
 
 ### Cloning the repository
