@@ -1,0 +1,70 @@
+:root {
+  --bg: #0d0f12; --tile: #4a5a7a; --tile-on: #6aa3f8; --text: #fff; --dim: #c6d0e4;
+  --row: 110px; --gap: 3px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; }
+header { display: flex; gap: 8px; align-items: center; padding: 6px 8px; font-size: 14px; }
+header .spacer { flex: 1; }
+#status { color: #8a93a6; font-size: 12px; }
+#status.bad { color: #ff8a8a; }
+button, select, input { font: inherit; }
+button { background: #2a3142; color: var(--text); border: 0; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+button:hover { background: #38415a; }
+button.primary { background: var(--tile-on); color: #08111f; font-weight: 600; }
+button.danger { background: #8a2f2f; }
+input, select { background: #1b2030; color: var(--text); border: 1px solid #38415a; border-radius: 6px; padding: 6px 8px; }
+header input { width: 56px; }
+.edit-only { display: none; }
+body.editing .edit-only { display: inline-block; }
+
+#grid { display: grid; gap: var(--gap); padding: var(--gap);
+  grid-auto-rows: var(--row); }
+.tile { background: var(--tile); color: var(--text); border-radius: 3px; position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 6px 4px; text-align: center; overflow: hidden; user-select: none; min-width: 0; }
+.tile.on { background: var(--tile-on); }
+.tile.clickable { cursor: pointer; }
+.tile.stale { opacity: .55; }
+.tile .label { font-size: 15px; line-height: 1.05; width: 100%; word-break: break-word; }
+.tile .state { font-size: 15px; }
+.tile .icon { width: 44px; height: 44px; opacity: .55; fill: currentColor; }
+.tile.on .icon { opacity: 1; }
+.tile.big { justify-content: flex-start; gap: 6px; }
+.tile.big .value { font-size: 34px; font-weight: 700; margin: auto 0; }
+.tile .more { position: absolute; right: 4px; bottom: 4px; width: 22px; height: 26px; padding: 0;
+  background: none; font-size: 18px; line-height: 1; }
+.thermo { display: flex; width: 100%; justify-content: space-around; align-items: center; flex: 1; font-size: 22px; font-weight: 600; }
+.thermo small { font-size: 11px; display: block; font-weight: 400; }
+.thermo-sub { font-size: 11px; opacity: .9; }
+.thermo-foot { font-size: 13px; }
+
+body.editing .tile { cursor: grab; outline: 2px dashed rgba(255,255,255,.35); outline-offset: -3px; }
+.cell { border: 1px dashed #2a3142; border-radius: 3px; }
+.cell.over { background: #26405f; border-color: var(--tile-on); }
+.tile.shake { animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+#empty { text-align: center; color: #8a93a6; margin-top: 15vh; }
+dialog { background: #171b26; color: var(--text); border: 1px solid #38415a; border-radius: 10px;
+  padding: 18px; width: min(560px, 94vw); max-height: 90vh; overflow: auto; }
+dialog::backdrop { background: rgba(0,0,0,.6); }
+dialog h2 { margin: 0 0 12px; font-size: 18px; }
+dialog p { color: #aab3c7; line-height: 1.4; }
+dialog label { display: block; margin: 10px 0 4px; font-size: 13px; color: #aab3c7; }
+dialog input[type=text], dialog input[type=password], dialog input[type=number], dialog select { width: 100%; }
+.row { display: flex; gap: 8px; margin-top: 14px; justify-content: flex-end; flex-wrap: wrap; }
+.devlist { max-height: 50vh; overflow: auto; margin-top: 8px; }
+.dev { display: flex; align-items: center; gap: 8px; padding: 6px 4px; border-bottom: 1px solid #262c3d; }
+.dev .name { flex: 1; min-width: 0; }
+.dev .room { color: #8a93a6; font-size: 12px; }
+.dev button { padding: 4px 8px; font-size: 12px; }
+.stepper { display: flex; align-items: center; gap: 12px; font-size: 22px; }
+.stepper button { width: 40px; height: 40px; font-size: 22px; }
+.seg { display: flex; gap: 6px; flex-wrap: wrap; }
+.seg button.sel { background: var(--tile-on); color: #08111f; }
+#toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: #8a2f2f;
+  padding: 10px 16px; border-radius: 8px; z-index: 10; }
+a { color: var(--tile-on); }
+.step { background: #1b2030; border-radius: 8px; padding: 10px 12px; margin: 10px 0; }
+@media (max-width: 700px) { :root { --row: 88px; } .tile .icon { width: 34px; height: 34px; } .tile .label, .tile .state { font-size: 12px; } }

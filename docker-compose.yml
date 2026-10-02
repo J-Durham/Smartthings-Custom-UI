@@ -1,0 +1,12 @@
+services:
+  smartthings-ui:
+    build: .
+    container_name: smartthings-ui
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data        # saved login + tile layout live here
+    environment:
+      - TZ=America/Los_Angeles
+      - POLL_SECONDS=30     # how often device states are refreshed
+    restart: unless-stopped

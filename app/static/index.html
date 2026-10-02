@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Tiles</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <span id="status"></span>
+  <span class="spacer"></span>
+  <button id="addBtn" class="edit-only">+ Add tile</button>
+  <label class="edit-only">Columns <input id="cols" type="number" min="3" max="20"></label>
+  <button id="editBtn">Edit</button>
+  <button id="settingsBtn" title="Connection settings">⚙</button>
+</header>
+
+<main id="grid"></main>
+<div id="empty" hidden>
+  <p>No tiles yet.</p>
+  <p>Press <b>Edit</b>, then <b>+ Add tile</b> to pick devices from your SmartThings account.</p>
+</div>
+
+<dialog id="dlg"></dialog>
+<div id="toast" hidden></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
