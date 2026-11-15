@@ -122,7 +122,18 @@ Smart Home Monitor (arm/disarm), scenes, and live push updates (it polls instead
 
 ## Security note
 
-There's no password on the dashboard. Anyone on your home network can view and control tiles. Don't expose port 8787 to the internet.
+There's no password on the dashboard. Anyone on your home network can view and control tiles. Don't expose port 8787 to the internet. See [SECURITY.md](SECURITY.md).
+
+## Disclaimer
+
+This is a personal hobby project provided **"as is", without warranty of any kind**, and is released
+under the [MIT License](LICENSE). It is not audited and not supported. You run it entirely at your own
+risk, and the author is not liable for any damage, data loss, device misbehavior, or security
+compromise resulting from its use. See [SECURITY.md](SECURITY.md) for important security warnings.
+
+This project is independent and is not affiliated with, endorsed by, or sponsored by Samsung or
+SmartThings. "SmartThings" and "Samsung" are trademarks of their respective owners. Use of the
+SmartThings API is subject to Samsung's own terms.
 
 ---
 *Developer notes: Flask app in `app/`, static UI in `app/static/`, `archive_ui/` holds the earlier experiments.*
