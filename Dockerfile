@@ -6,6 +6,7 @@ WORKDIR /srv
 COPY requirements.txt .
 RUN apk upgrade --no-cache \
     && pip install --no-cache-dir -r requirements.txt \
+    && pip uninstall -y pip \
     && addgroup -g 10001 -S app \
     && adduser -u 10001 -S -G app -H -s /sbin/nologin app \
     && mkdir -p /data && chown app:app /data
