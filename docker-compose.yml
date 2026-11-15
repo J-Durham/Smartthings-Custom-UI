@@ -3,9 +3,9 @@ services:
     build: .
     container_name: smartthings-ui
     ports:
-      - "8080:8080"
+      - "8787:8787"
     volumes:
-      - ./data:/data        # saved login + tile layout live here
+      - ./data:/data        # saved login + tile layout; must be writable by uid 10001 (chown 10001:10001 ./data)
     environment:
       - TZ=America/Los_Angeles
       - POLL_SECONDS=30     # how often device states are refreshed
