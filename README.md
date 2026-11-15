@@ -63,9 +63,9 @@ docker compose up -d --build
 
 The first run takes a few minutes. When it's done, open a web browser **on that same computer** and go to:
 
-**<http://localhost:8080>**
+**<http://localhost:8787>**
 
-To open it from a phone/tablet/other computer on your network, use `http://<that computer's IP address>:8080` (for example `http://192.168.1.50:8080`).
+To open it from a phone/tablet/other computer on your network, use `http://<that computer's IP address>:8787` (for example `http://192.168.1.50:8787`).
 
 ---
 
@@ -113,7 +113,7 @@ It restarts automatically when the computer reboots (as long as Docker Desktop s
 - **"Redirect URI mismatch" from SmartThings** – the Redirect URI in the setup window must be *identical* to the one registered in Part 1. Check what's registered with `smartthings apps:oauth <app id>` (find the id with `smartthings apps`). If `redirectUris` is empty or wrong, fix it with `smartthings apps:oauth:update <app id>`.
 - **403 Forbidden on the SmartThings login page** – the redirect URI must start with `https://`; `http://localhost` is rejected.
 - **Tiles stopped updating / "Please reconnect"** – click ⚙ (top right) → Disconnect, then repeat Part 3.
-- **Can't reach it from another device** – check the host computer's firewall allows port 8080.
+- **Can't reach it from another device** – check the host computer's firewall allows port 8787.
 - **Wrong timezone on "Updated" time** – edit `TZ` in `docker-compose.yml`.
 
 ## Not included yet
@@ -122,7 +122,7 @@ Smart Home Monitor (arm/disarm), scenes, and live push updates (it polls instead
 
 ## Security note
 
-There's no password on the dashboard. Anyone on your home network can view and control tiles. Don't expose port 8080 to the internet.
+There's no password on the dashboard. Anyone on your home network can view and control tiles. Don't expose port 8787 to the internet.
 
 ---
 *Developer notes: Flask app in `app/`, static UI in `app/static/`, `archive_ui/` holds the earlier experiments.*
